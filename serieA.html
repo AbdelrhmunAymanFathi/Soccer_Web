@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://fonts.googleapis.com/css?family=Inter' rel='stylesheet'>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/serieA.css">
+    <title>Serie A</title>
+    <link rel="shortcut icon" href="img/Frame 4.png" type="image/x-icon">
+    <style>
+        .page-loader {
+            width: 100%;
+            height: 100vh;
+            position: absolute;
+            background: #badcd8;
+            z-index: 1000;
+
+        }
+
+        .page-loader .txt {
+            color: #666;
+            text-align: center;
+            top: 40%;
+            position: relative;
+            text-transform: uppercase;
+            letter-spacing: 0.3rem;
+            font-weight: bold;
+            line-height: 1.5;
+        }
+
+        /* Spinner animation */
+        .spinner {
+            position: relative;
+            top: 35%;
+            width: 80px;
+            height: 80px;
+            margin: 0 auto;
+            background-color: #222;
+            border-radius: 100%;
+            -webkit-animation: sk-scaleout 1.0s infinite ease-in-out;
+            animation: sk-scaleout 1.0s infinite ease-in-out;
+        }
+
+        @-webkit-keyframes sk-scaleout {
+            0% {
+                -webkit-transform: scale(0)
+            }
+
+            100% {
+                -webkit-transform: scale(1.0);
+                opacity: 0;
+            }
+        }
+
+        @keyframes sk-scaleout {
+            0% {
+                -webkit-transform: scale(0);
+                transform: scale(0);
+            }
+
+            100% {
+                -webkit-transform: scale(1.0);
+                transform: scale(1.0);
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+
+<body onload="hideLoader()"> <!-- add onload="hideLoader()" to body-->
+    <!-- div loader  -->
+    <div class="page-loader">
+        <div class="spinner"></div>
+        <div class="txt">Loading...</div>
+    </div>
+    <!-- End div loader -->
+
+
+
+
+    <header>
+        <div class="logo">
+            <img src="img/Frame 2.png" alt="Logo">
+        </div>
+        <div class="search">
+            <div class="input-icons">
+                <i class="fa-solid fa-magnifying-glass icon"></i>
+                <input class="input-field" type="text" placeholder="Search for anything">
+            </div>
+        </div>
+        <div class="user-info">
+            <div class="user-img">
+                <a href="#"><img src="img/user.jpeg" alt="User Image"></a>
+            </div>
+            <div class="user-detals">
+                <div class="name">
+                    <h4><a href="#">Admin</a></h4>
+                    <a href="#"><img src="img/settings.png" alt="" class="i"></a>
+                </div>
+                <div class="rank">
+                    <p>COACH</p>
+                </div>
+            </div>
+        </div>
+        <a class="buttonHandle" href="javascript:void(0);" class="icon" onclick="geeksforgeeks()">
+            <i onclick="myFunction(this)" class="fa-solid fa-bars">
+            </i>
+        </a>
+    </header>
+
+    <div class="togglemenu" id="togglemenu">
+
+        <div class="user-info">
+            <div class="logo">
+                <img src="img/Frame 2.png" alt="Logo">
+            </div>
+            <div class="info">
+                <div class="user-img">
+                    <a href="#"><img src="img/user.jpeg" alt="User Image"></a>
+                </div>
+                <div class="user-detals">
+                    <div class="name">
+                        <h4><a href="#">Admin</a></h4>
+                    </div>
+                    <div class="rank">
+                        <p>COACH</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="search">
+            <div class="input-icons">
+                <input class="input-field" type="text" placeholder="Search for anything">
+            </div>
+        </div>
+
+        <ul class="slider-list">
+
+            <!------------- Non Dropdown List Item ------------->
+            <li style="padding-right: 30px;">
+                <div class="title">
+                    <a class="active" href="home.html">
+                        <img src="img/home.png" alt="">
+                        <span class="name">Home</span>
+                    </a>
+                    <!-- <i class='bx bx-chevron-down'></i> -->
+                </div>
+                <div class="submenu">
+                    <a href="home.html" class="link submenu-title">Home</a>
+                </div>
+            </li>
+
+
+
+            <!------------- Non Dropdown List Item ------------->
+            <li style="padding-right: 30px;">
+                <div class="title">
+                    <a class="active" href="serieA.html">
+                        <img src="img/Serie A.png" alt="">
+                        <span class="name">Serie A</span>
+                    </a>
+                    <!-- <i class='bx bx-chevron-down'></i> -->
+                </div>
+                <div class="submenu">
+                    <a href="serieA.html" class="link submenu-title">Serie A</a>
+                </div>
+            </li>
+
+            <!------------- Dropdown List Item ------------->
+            <li class="dropdown">
+                <div class="title">
+                    <a class="active" href="#">
+                        <img src="img/Analysis.png" alt="">
+                        <span class="name">Analysis</span>
+                    </a>
+                    <i class='bx bx-chevron-down'></i>
+                </div>
+                <div class="submenu">
+                    <a href="#" class="link submenu-title">Analysis</a>
+                    <a href="#" class="link">page1</a>
+                    <a href="#" class="link">page2</a>
+                    <a href="#" class="link">page3</a>
+                    <a href="#" class="link">page4</a>
+                </div>
+            </li>
+
+            <!------------- Dropdown List Item ------------->
+            <li class="dropdown">
+                <div class="title">
+                    <a class="active" href="#">
+                        <img src="img/Ranking.png" alt="">
+                        <span class="name">Ranking</span>
+                    </a>
+                    <i class='bx bx-chevron-down'></i>
+                </div>
+                <div class="submenu">
+                    <a href="#" class="link submenu-title">Ranking</a>
+                    <a href="#" class="link">page1</a>
+                    <a href="#" class="link">page2</a>
+                    <a href="#" class="link">page3</a>
+                    <a href="#" class="link">page4</a>
+                </div>
+            </li>
+
+
+            <!------------- Non Dropdown List Item ------------->
+            <li>
+                <div class="title">
+                    <a class="active" href="#">
+                        <img src="img/Calendar.png" alt="">
+                        <span class="name">Calendar</span>
+                    </a>
+                    <!-- <i class='bx bx-chevron-down'></i> -->
+                </div>
+                <div class="submenu">
+                    <a href="#" class="link submenu-title">Calendar</a>
+                </div>
+            </li>
+
+            <!------------- Non Dropdown List Item ------------->
+            <li>
+                <div>
+                    <a class="active logout-btn" href="#">
+                        <span class="name">Log out</span>
+                        <img src="img/log-out.png" alt="">
+
+                    </a>
+                    <!-- <i class='bx bx-chevron-down'></i> -->
+                </div>
+            </li>
+
+        </ul>
+
+    </div>
+
+    <!-- ============= Home Section ============= -->
+    <section class="body-content">
+
+        <!-- ============= Sidebar Section ============= -->
+        <div class="sidebar">
+            <!-- ========== List ========== -->
+            <ul class="slider-list">
+
+                <!------------- Non Dropdown List Item ------------->
+                <li style="padding-right: 30px;">
+                    <div class="title">
+                        <a class="active" href="home.html">
+                            <img src="img/home.png" alt="">
+                            <span class="name">Home</span>
+                        </a>
+                        <!-- <i class='bx bx-chevron-down'></i> -->
+                    </div>
+                    <div class="submenu">
+                        <a href="home.html" class="link submenu-title">Home</a>
+                    </div>
+                </li>
+
+                <!------------- Non Dropdown List Item ------------->
+                <li style="padding-right: 30px;">
+                    <div class="title">
+                        <a class="active" href="serieA.html">
+                            <img src="img/Serie A.png" alt="">
+                            <span class="name">Serie A</span>
+                        </a>
+                        <!-- <i class='bx bx-chevron-down'></i> -->
+                    </div>
+                    <div class="submenu">
+                        <a href="serieA.html" class="link submenu-title">Serie A</a>
+                    </div>
+                </li>
+
+                <!------------- Dropdown List Item ------------->
+                <li class="dropdown">
+                    <div class="title">
+                        <a class="active" href="#">
+                            <img src="img/Analysis.png" alt="">
+                            <span class="name">Analysis</span>
+                        </a>
+                        <i class='bx bx-chevron-down'></i>
+                    </div>
+                    <div class="submenu">
+                        <a href="#" class="link submenu-title">Analysis</a>
+                        <a href="#" class="link">page1</a>
+                        <a href="#" class="link">page2</a>
+                        <a href="#" class="link">page3</a>
+                        <a href="#" class="link">page4</a>
+                    </div>
+                </li>
+
+                <!------------- Dropdown List Item ------------->
+                <li class="dropdown">
+                    <div class="title">
+                        <a class="active" href="#">
+                            <img src="img/Ranking.png" alt="">
+                            <span class="name">Ranking</span>
+                        </a>
+                        <i class='bx bx-chevron-down'></i>
+                    </div>
+                    <div class="submenu">
+                        <a href="#" class="link submenu-title">Ranking</a>
+                        <a href="#" class="link">page1</a>
+                        <a href="#" class="link">page2</a>
+                        <a href="#" class="link">page3</a>
+                        <a href="#" class="link">page4</a>
+                    </div>
+                </li>
+
+                <!------------- Non Dropdown List Item ------------->
+                <li>
+                    <div class="title">
+                        <a class="active" href="#">
+                            <img src="img/Calendar.png" alt="">
+                            <span class="name">Calendar</span>
+                        </a>
+                        <!-- <i class='bx bx-chevron-down'></i> -->
+                    </div>
+                    <div class="submenu">
+                        <a href="#" class="link submenu-title">Calendar</a>
+                    </div>
+                </li>
+
+                <!------------- Non Dropdown List Item ------------->
+                <li>
+                    <p class="copyRight">@Copyright Phoenix Consulting.
+                        All rights Reserved</p>
+                    <div class="title logout">
+                        <a class="active" href="#">
+                            <span class="name">Log out</span>
+                            <img src="img/log-out.png" alt="">
+
+                        </a>
+                        <!-- <i class='bx bx-chevron-down'></i> -->
+                    </div>
+
+                    <div class="submenu">
+
+                        <a href="#" class="link submenu-title">Log out</a>
+                    </div>
+                </li>
+
+            </ul>
+        </div>
+
+
+        <div class="home-content">
+
+            <div class="card1">
+
+                <div class="card1-content row p-2">
+
+                    <div class="card-info col-lg-5 col-md-11 col-sm-12 pb-sm-3 me-2">
+
+                        <div class="team-1">
+                            <img src="./img/Serie_A_Logo.png" alt="">
+                        </div>
+
+                        <div class="desc-team">
+                            <h1>Serie A</h1>
+                            <div class="LogoItaly">
+
+                                <img src="./img/Italy (IT).png" alt="" class="imgUno">
+                                <p>italy</p>
+
+                            </div>
+                            <p class="desc1">
+                                Current Season: 2022 /2023
+                            </p>
+
+                            <p class="desc2">Fixtures Played: 238 / 380</p>
+                        </div>
+
+                    </div>
+
+                    <div class="card-info2 col-lg-3 col-md-5 col-sm-12 pb-sm-3">
+
+                        <img src="./img/Frame 64.png" alt="">
+
+                        <p>Juventus</p>
+                    </div>
+
+                    <div class="card-info3 col-lg-3 col-md-5 col-sm-12 pb-sm-3">
+
+                        <img src="./img/Layer_1 (4).png" alt="">
+                        <p>AS Roma</p>
+                    </div>
+
+
+
+
+                </div>
+            </div>
+
+
+            <div class="card1">
+
+                <div class="card1-content row p-2">
+
+                    <div class="card-info3 col-lg-3 col-md-5 col-sm-12 pb-sm-3">
+
+                        <img src="./img/Layer_1 (5).png" alt="">
+
+                        <p>Fiorentina</p>
+                    </div>
+
+                    <div class="card-info3 col-lg-3 col-md-5 col-sm-12 pb-sm-3">
+
+                        <img src="./img/Page_1.png" alt="">
+                        <p>AC Milan</p>
+                    </div>
+
+                    <div class="card-info3 col-lg-3 col-md-5 col-sm-12 pb-sm-3" onclick="goNapoli()" style="cursor: pointer;">
+
+                        <img src="./img/Layer_1 (6).png" alt="">
+                        <p>SSC Napoli</p>
+                    </div>
+
+
+                    <div class="card-info3 col-lg-3 col-md-5 col-sm-12 pb-sm-3">
+
+                        <img src="./img/Layer_1 (3).png" alt="">
+                        <p>Atalanta</p>
+                    </div>
+
+
+
+
+                </div>
+            </div>
+
+
+
+            <div class="ClassContianerA1 ">
+
+                <div class="total-table">
+                    <h4>Italy Serie A Table</h4>
+                    <img src="./img/data9.png" alt="" style="height: 87%;
+                            width: 100%;">
+                </div>
+
+                <div class="score-table">
+                    <h4>Italy Serie A Top Goals</h4>
+                    <img src="./img/data4.png" alt="" style="height: 87%;
+                            width: 100%;">
+                </div>
+            </div>
+
+
+            <div class="card1">
+
+                <div class="card1-content row p-2">
+
+
+                    <div class="card-info5 col-lg-5 col-md-5 col-sm-12 pb-sm-3">
+
+                        <div> <img src="./img/Layer_1 (6).png" alt=""></div>
+
+                        <div>
+                            <p class="t1">Most Goals</p>
+                            <h1>Napoli</h1>
+                            <h1>58</h1>
+                            <p class="t2">2022 / 2023</p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="card-info6 col-lg-5 col-md-5 col-sm-12 pb-sm-3">
+
+                        <div> <img src="./img/Layer_1 (5).png" alt=""></div>
+
+                        <div>
+                            <p class="t1">Most Goals Conceded</p>
+                            <h1>Fiorentina</h1>
+                            <h1>44</h1>
+                            <p class="t2">2022 / 2023</p>
+                        </div>
+
+
+                    </div>
+
+                </div>
+            </div>
+
+
+            <div class="card4-content row p-2">
+
+                <div class="card-information col-lg-2 col-md-6 col-sm-12 pb-sm-3">
+                    <span>104 Cards</span>
+                    <div class="img-icon">
+                        <img src="img/yellow.png" alt="">
+                    </div>
+                    <h6>Total Yellow Cards</h6>
+                </div>
+
+                <div class="card-information col-lg-2 col-md-6 col-sm-12 pb-sm-3">
+                    <span>0 Cards</span>
+                    <div class="img-icon">
+                        <img src="img/red.png" alt="">
+                    </div>
+                    <h6>Total Red Cards</h6>
+                </div>
+
+                <div class="card-information col-lg-2 col-md-6 col-sm-12 pb-sm-3">
+                    <span class="span">5 Substitutions</span>
+                    <div class="img-icon">
+                        <img src="img/tshirt.png" alt="">
+                    </div>
+                    <h6>Total substitutions</h6>
+                </div>
+
+                <div class="card-information col-lg-2 col-md-6 col-sm-12 pb-sm-3">
+                    <span>12 Goal</span>
+                    <div class="img-icon">
+                        <img src="img/boll.png" alt="">
+                    </div>
+                    <h6>Total Goals</h6>
+                </div>
+
+
+            </div>
+
+
+
+        </div>
+
+    </section>
+
+
+    <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+    <!-- add this script (loading)-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <!-- add this script (loading)-->
+    <!-- add this script (loading)-->
+
+    <script type="text/javascript">
+        // Function Loader
+        function hideLoader() {
+            $('.page-loader').fadeOut('slow'); // Fun Loader
+        }
+        // end function loader
+
+
+        // Function to toggle the bar
+        function geeksforgeeks() {
+            let x = document.getElementById("togglemenu");
+
+            if (x.style.display === "block") {
+                x.style.display = "none";
+            } else {
+                x.style.display = "block";
+            }
+        }
+
+        // Function to toggle the plus menu into minus
+        function myFunction(x) {
+            x.classList.toggle("fa-minus-circle");
+        }
+        // go to the Napoli
+        function goNapoli() {
+            window.location = 'serieNapoli.html'
+        }
+       
+
+    </script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>

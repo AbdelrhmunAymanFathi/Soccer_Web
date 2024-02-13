@@ -1,0 +1,458 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+
+
+section {
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+    background-image: url("/img/Rectangle 10.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+    background-position: center;
+    background-attachment: fixed;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+}
+
+.image-content {
+    text-align: center;
+}
+
+.container img {
+    width: 346px;
+    height: 41px;
+    margin-bottom: 30px;
+    margin-top: 1ex;
+}
+
+.login-form {
+    background-color: #fff;
+    width: auto;
+    height: auto;
+    padding: 24px;
+    border-radius: 10px;
+    display: inline-flex;
+}
+
+.login-form h3 {
+    font-family: Inter;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 29px;
+    letter-spacing: 0em;
+    text-align: center;
+    line-height: 29.05px;
+}
+
+.login-form p {
+
+    font-family: Inter;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 19px;
+    letter-spacing: 0em;
+    line-height: 19.36px;
+}
+
+.login-form .user-lable,
+.pass-lable {
+    font-family: Inter;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 22px;
+    letter-spacing: 0em;
+    text-align: right;
+    color: #1A2D2C;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+
+.login-form .input-user,
+.input-password {
+    width: 416px;
+    height: 35px;
+    padding: 8px 32px 8px 32px;
+    border-radius: 30px;
+    justify-content: space-between;
+    background-color: #DEEBEA;
+    border: none;
+    outline: none;
+
+}
+
+.checkbox-content {
+    display: flex;
+    gap: 10px;
+    margin-top: 8px;
+    margin-top: 20px;
+
+}
+
+.checkbox-content .check {
+    width: 18px;
+    height: 18px;
+    top: 3px;
+    left: 3px;
+}
+
+.checkbox-content .check-lable {
+    font-family: Inter;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 19px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #1A2D2C;
+}
+
+
+.user {
+    padding: 0;
+    text-align: left;
+}
+
+.phone {
+    padding: 0;
+    text-align: left;
+    margin-top: 20px;
+}
+
+.pass {
+    padding: 0;
+    margin-top: 20px;
+    text-align: left;
+}
+
+
+.card1 p {
+    font-family: Inter;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 19px;
+    letter-spacing: 0em;
+    text-align: left;
+
+}
+
+.card2 {
+    margin-top: 35px;
+}
+
+.btn-content {
+    text-align: left;
+}
+
+.btn-content .btn {
+    width: 416px;
+    height: 40px;
+    padding: 8px 16px 8px 16px;
+    border-radius: 23px;
+    gap: 8px;
+    margin-top: 20px;
+    font-family: Inter;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 22px;
+    letter-spacing: 0em;
+    text-align: center;
+    background-color: #1A2D2C;
+    outline: none;
+    border: none;
+    outline-offset: none;
+
+}
+
+
+
+.create {
+    display: flex;
+    gap: 3px;
+    margin: 20px 0;
+
+}
+
+.create h5 {
+    font-family: Inter;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 19px;
+    letter-spacing: 0em;
+    text-align: left;
+}
+
+.create a {
+    text-decoration: none;
+    font-family: Inter;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 19px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #0075FF;
+
+}
+
+.copyright {
+
+    font-family: Inter;
+    font-size: 10px;
+    font-weight: 400;
+    line-height: 12px;
+    letter-spacing: 0em;
+    text-align: center;
+    margin-top: 30px;
+    color: #DEEBEA;
+}
+
+
+
+
+
+
+
+
+
+
+
+@media (min-width: 768px) and (max-width:991px) {
+    .col-md-12 {
+        -ms-flex: 0 0 100%;
+        padding-left: 17ex;
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+}
+
+@media (min-width: 270px) and (max-width:300px) {
+    .login-form {
+        width: 100%;
+    }
+
+    .container img {
+        width: 200px;
+        height: 41px;
+        margin-bottom: 30px;
+        margin-top: 1ex;
+    }
+
+    .login-form .input-user,
+    .input-password {
+        width: 8em;
+        padding: 8px 0px 8px 5px;
+    }
+
+    .btn-content .btn {
+        width: 12ex;
+    }
+
+    .create {
+        display: block;
+        margin: 20px 2ex;
+    }
+
+    .card1 p {
+        text-align: center;
+    }
+
+    .user {
+        padding: 0;
+        text-align: -webkit-center;
+    }
+
+    .phone {
+        padding: 0;
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    .pass {
+        padding: 0;
+        margin-top: 20px;
+        text-align: center;
+    }
+
+    .checkbox-content {
+        display: block;
+    }
+}
+
+
+@media (min-width: 768px) and (max-width:991px) {
+    .col-md-12 {
+        -ms-flex: 0 0 100%;
+        padding-left: 17ex;
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+}
+
+@media (min-width: 301px) and (max-width:448px) {
+    .login-form {
+        width: 100%;
+    }
+
+    .container img {
+        width: 250px;
+        height: 41px;
+        margin-bottom: 30px;
+        margin-top: 1ex;
+    }
+
+    .login-form .input-user,
+    .input-password {
+        width: 8em;
+
+    }
+
+    .btn-content .btn {
+        width: 12ex;
+    }
+
+    .create {
+        display: block;
+        margin: 20px 2ex;
+    }
+
+    .card1 p {
+        text-align: center;
+    }
+
+    .user {
+        padding: 0;
+        text-align: -webkit-center;
+    }
+
+    .phone {
+        padding: 0;
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    .pass {
+        padding: 0;
+        margin-top: 20px;
+        text-align: center;
+    }
+
+    .checkbox-content {
+        display: block;
+    }
+}
+
+
+@media (min-width: 363px) and (max-width:449px) {
+    .login-form {
+        width: 90%;
+    }
+
+    .container img {
+        width: 315px;
+        height: 41px;
+        margin-bottom: 30px;
+        margin-top: 1ex;
+    }
+
+    .login-form .input-user,
+    .input-password {
+        width: 14em;
+    }
+
+    .btn-content .btn {
+        width: 23ex;
+    }
+
+    .create {
+        display: block;
+        margin: 20px 2ex;
+    }
+
+    .card1 p {
+        text-align: center;
+    }
+
+    .user {
+        padding: 0;
+        text-align: -webkit-center;
+    }
+
+    .phone {
+        padding: 0;
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    .pass {
+        padding: 0;
+        margin-top: 20px;
+        text-align: center;
+    }
+
+    .checkbox-content {
+        display: block;
+    }
+}
+
+@media (min-width: 450px) and (max-width:489px) {
+    .login-form {
+        width: 39ex;
+    }
+
+    .login-form .input-user,
+    .input-password {
+        width: auto;
+    }
+
+    .btn-content .btn {
+        width: 23ex;
+    }
+
+    .create {
+        display: block;
+        margin: 20px 2ex;
+    }
+
+    .card1 p {
+        text-align: center;
+    }
+
+    .user {
+        padding: 0;
+        text-align: -webkit-center;
+    }
+
+    .phone {
+        padding: 0;
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    .pass {
+        padding: 0;
+        margin-top: 20px;
+        text-align: center;
+    }
+
+    .checkbox-content {
+        display: block;
+    }
+}
+
+
+@media (min-width: 490px) and (max-width:556px) {
+    .login-form {
+        width: 59ex;
+    }
+}
+
+@media (min-width: 557px) and (max-width:575px) {
+    .login-form {
+        margin: 1ex;
+    }
+}

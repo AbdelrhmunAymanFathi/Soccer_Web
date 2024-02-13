@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://fonts.googleapis.com/css?family=Inter' rel='stylesheet'>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/GoalsState.css">
+    <title>Goals Stats</title>
+    <link rel="shortcut icon" href="img/Frame 4.png" type="image/x-icon">
+
+    <style>
+        .page-loader{
+            width: 100%;
+            height: 100vh;
+            position: absolute;
+            background: #badcd8;
+            z-index: 1000;
+          
+        }
+        .page-loader .txt{
+            color: #666;
+            text-align: center;
+            top: 40%;
+            position: relative;
+            text-transform: uppercase;
+            letter-spacing: 0.3rem;
+            font-weight: bold;
+            line-height: 1.5;
+        }
+        
+        /* Spinner animation */
+        .spinner {
+          position: relative;
+          top: 35%;
+          width: 80px;
+          height: 80px;
+          margin: 0 auto;
+          background-color: #222;
+          border-radius: 100%;  
+          -webkit-animation: sk-scaleout 1.0s infinite ease-in-out;
+          animation: sk-scaleout 1.0s infinite ease-in-out;
+        }
+        
+        @-webkit-keyframes sk-scaleout {
+          0% { -webkit-transform: scale(0) }
+          100% {
+            -webkit-transform: scale(1.0);
+            opacity: 0;
+          }
+        }
+        
+        @keyframes sk-scaleout {
+          0% { 
+            -webkit-transform: scale(0);
+            transform: scale(0);
+          } 100% {
+            -webkit-transform: scale(1.0);
+            transform: scale(1.0);
+            opacity: 0;
+          }
+        }
+        
+    </style>
+</head>
+
+<body onload="hideLoader()">  <!-- add onload="hideLoader()" to body-->
+    <!-- div loader  -->
+    <div class="page-loader">
+        <div class="spinner"></div>
+        <div class="txt">Loading...</div>
+    </div>
+    <!-- End div loader -->
+    <header>
+        <div class="logo">
+            <img src="img/Frame 2.png" alt="Logo">
+        </div>
+        <div class="search">
+            <div class="input-icons">
+                <i class="fa-solid fa-magnifying-glass icon"></i>
+                <input class="input-field" type="text" placeholder="Search for anything">
+            </div>
+        </div>
+        <div class="user-info">
+            <div class="user-img">
+                <a href="#"><img src="img/user.jpeg" alt="User Image"></a>
+            </div>
+            <div class="user-detals">
+                <div class="name">
+                    <h4><a href="#">Admin</a></h4>
+                    <a href="#"><img src="img/settings.png" alt="" class="i"></a>
+                </div>
+                <div class="rank">
+                    <p>COACH</p>
+                </div>
+            </div>
+        </div>
+        <a class="buttonHandle" href="javascript:void(0);" class="icon" onclick="geeksforgeeks()">
+            <i onclick="myFunction(this)" class="fa-solid fa-bars">
+            </i>
+        </a>
+    </header>
+
+    <div class="togglemenu" id="togglemenu">
+
+        <div class="user-info">
+            <div class="logo">
+                <img src="img/Frame 2.png" alt="Logo">
+            </div>
+            <div class="info">
+                <div class="user-img">
+                    <a href="#"><img src="img/user.jpeg" alt="User Image"></a>
+                </div>
+                <div class="user-detals">
+                    <div class="name">
+                        <h4><a href="#">Admin</a></h4>
+                    </div>
+                    <div class="rank">
+                        <p>COACH</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="search">
+            <div class="input-icons">
+                <input class="input-field" type="text" placeholder="Search for anything">
+            </div>
+        </div>
+
+        <ul class="slider-list">
+
+            <!------------- Non Dropdown List Item ------------->
+            <li style="padding-right: 30px;">
+                <div class="title">
+                    <a class="active" href="home.html">
+                        <img src="img/home.png" alt="">
+                        <span class="name">Home</span>
+                    </a>
+                    <!-- <i class='bx bx-chevron-down'></i> -->
+                </div>
+                <div class="submenu">
+                    <a href="home.html" class="link submenu-title">Home</a>
+                </div>
+            </li>
+
+
+
+            <!------------- Non Dropdown List Item ------------->
+            <li style="padding-right: 30px;">
+                <div class="title">
+                    <a class="active" href="serieA.html">
+                        <img src="img/Serie A.png" alt="">
+                        <span class="name">Serie A</span>
+                    </a>
+                    <!-- <i class='bx bx-chevron-down'></i> -->
+                </div>
+                <div class="submenu">
+                    <a href="serieA.html" class="link submenu-title">Serie A</a>
+                </div>
+            </li>
+
+            <!------------- Dropdown List Item ------------->
+            <li class="dropdown">
+                <div class="title">
+                    <a class="active" href="#">
+                        <img src="img/Analysis.png" alt="">
+                        <span class="name">Analysis</span>
+                    </a>
+                    <i class='bx bx-chevron-down'></i>
+                </div>
+                <div class="submenu">
+                    <a href="#" class="link submenu-title">Analysis</a>
+                    <a href="#" class="link">page1</a>
+                    <a href="#" class="link">page2</a>
+                    <a href="#" class="link">page3</a>
+                    <a href="#" class="link">page4</a>
+                </div>
+            </li>
+
+            <!------------- Dropdown List Item ------------->
+            <li class="dropdown">
+                <div class="title">
+                    <a class="active" href="#">
+                        <img src="img/Ranking.png" alt="">
+                        <span class="name">Ranking</span>
+                    </a>
+                    <i class='bx bx-chevron-down'></i>
+                </div>
+                <div class="submenu">
+                    <a href="#" class="link submenu-title">Ranking</a>
+                    <a href="#" class="link">page1</a>
+                    <a href="#" class="link">page2</a>
+                    <a href="#" class="link">page3</a>
+                    <a href="#" class="link">page4</a>
+                </div>
+            </li>
+
+
+            <!------------- Non Dropdown List Item ------------->
+            <li>
+                <div class="title">
+                    <a class="active" href="#">
+                        <img src="img/Calendar.png" alt="">
+                        <span class="name">Calendar</span>
+                    </a>
+                    <!-- <i class='bx bx-chevron-down'></i> -->
+                </div>
+                <div class="submenu">
+                    <a href="#" class="link submenu-title">Calendar</a>
+                </div>
+            </li>
+
+            <!------------- Non Dropdown List Item ------------->
+            <li>
+                <div>
+                    <a class="active logout-btn" href="login.html">
+                        <span class="name">Log out</span>
+                        <img src="img/log-out.png" alt="">
+
+                    </a>
+                    <!-- <i class='bx bx-chevron-down'></i> -->
+                </div>
+            </li>
+
+        </ul>
+
+    </div>
+
+    <!-- ============= Home Section ============= -->
+    <section class="body-content">
+
+        <!-- ============= Sidebar Section ============= -->
+        <div class="sidebar">
+            <!-- ========== List ========== -->
+            <ul class="slider-list">
+
+                <!------------- Non Dropdown List Item ------------->
+                <li style="padding-right: 30px;">
+                    <div class="title">
+                        <a class="active" href="home.html">
+                            <img src="img/home.png" alt="">
+                            <span class="name">Home</span>
+                        </a>
+                        <!-- <i class='bx bx-chevron-down'></i> -->
+                    </div>
+                    <div class="submenu">
+                        <a href="home.html" class="link submenu-title">Home</a>
+                    </div>
+                </li>
+
+                <!------------- Non Dropdown List Item ------------->
+                <li style="padding-right: 30px;">
+                    <div class="title">
+                        <a class="active" href="serieA.html">
+                            <img src="img/Serie A.png" alt="">
+                            <span class="name">Serie A</span>
+                        </a>
+                        <!-- <i class='bx bx-chevron-down'></i> -->
+                    </div>
+                    <div class="submenu">
+                        <a href="serieA.html" class="link submenu-title">Serie A</a>
+                    </div>
+                </li>
+
+                <!------------- Dropdown List Item ------------->
+                <li class="dropdown">
+                    <div class="title">
+                        <a class="active" href="#">
+                            <img src="img/Analysis.png" alt="">
+                            <span class="name">Analysis</span>
+                        </a>
+                        <i class='bx bx-chevron-down'></i>
+                    </div>
+                    <div class="submenu">
+                        <a href="#" class="link submenu-title">Analysis</a>
+                        <a href="#" class="link">page1</a>
+                        <a href="#" class="link">page2</a>
+                        <a href="#" class="link">page3</a>
+                        <a href="#" class="link">page4</a>
+                    </div>
+                </li>
+
+                <!------------- Dropdown List Item ------------->
+                <li class="dropdown">
+                    <div class="title">
+                        <a class="active" href="#">
+                            <img src="img/Ranking.png" alt="">
+                            <span class="name">Ranking</span>
+                        </a>
+                        <i class='bx bx-chevron-down'></i>
+                    </div>
+                    <div class="submenu">
+                        <a href="#" class="link submenu-title">Ranking</a>
+                        <a href="#" class="link">page1</a>
+                        <a href="#" class="link">page2</a>
+                        <a href="#" class="link">page3</a>
+                        <a href="#" class="link">page4</a>
+                    </div>
+                </li>
+
+                <!------------- Non Dropdown List Item ------------->
+                <li>
+                    <div class="title">
+                        <a class="active" href="#">
+                            <img src="img/Calendar.png" alt="">
+                            <span class="name">Calendar</span>
+                        </a>
+                        <!-- <i class='bx bx-chevron-down'></i> -->
+                    </div>
+                    <div class="submenu">
+                        <a href="#" class="link submenu-title">Calendar</a>
+                    </div>
+                </li>
+
+                <!------------- Non Dropdown List Item ------------->
+                <li>
+                    <div class="title logout">
+                        <a class="active" href="login.html">
+                            <span class="name">Log out</span>
+                            <img src="img/log-out.png" alt="">
+
+                        </a>
+                        <!-- <i class='bx bx-chevron-down'></i> -->
+                    </div>
+                    <div class="submenu">
+                        <a href="login.html" class="link submenu-title">Log out</a>
+                    </div>
+                </li>
+
+            </ul>
+        </div>
+
+
+        <div class="home-content">
+
+            <div class="card1">
+                <h2 class="col-12"><i class="fa fa-long-arrow-left"></i> Analysis | Goals Stats</h2>
+                <div class="card1-content row p-2">
+
+                    <div class="card-info col-lg-2 col-md-6 col-sm-12 pb-sm-3">
+                        <div class="description ">
+                            <h2> Team Shots</h2>
+                        </div>
+
+                        <div class="contianeerSelector d-lg-flex  ">
+
+                            <select name="teams" id="teams">
+                                <option value="Fiorentina">Fiorentina</option>
+                                <option value="teamName">team name</option>
+                                <option value="teamName1">team name 1</option>
+                                <option value="teamName2">team name 2</option>
+                                <option value="teamName3">team name 3</option>
+                                <option value="teamName3">team name 3</option>
+                                <option value="teamName3">team name 3</option>
+                                <option value="teamName3">team name 3</option>
+                                <option value="teamName3">team name 3</option>
+                                <option value="teamName3">team name 3</option>
+                            </select>
+
+                            <select name="teams2" id="teams2">
+                                <option value="Fiorentina">Milan - Sassuolo, 2 - 5</option>
+                                <option value="teamName">Milan - Sassuolo, 2 - 5</option>
+                                <option value="teamName1">Milan - Sassuolo, 2 - 5</option>
+                                <option value="teamName2">Milan - Sassuolo, 2 - 5</option>
+                                <option value="teamName3">Milan - Sassuolo, 2 - 5</option>
+                                <option value="teamName3">Milan - Sassuolo, 2 - 5</option>
+                                <option value="teamName3">Milan - Sassuolo, 2 - 5</option>
+                                <option value="teamName3">Milan - Sassuolo, 2 - 5</option>
+                                <option value="teamName3">Milan - Sassuolo, 2 - 5</option>
+                                <option value="teamName3">Milan - Sassuolo, 2 - 5</option>
+                            </select>
+
+
+                            <select name="teams3" id="teams3">
+                                <option value="Fiorentina">Milan - Sassuolo, 2 - 5</option>
+                                <option value="teamName">Milan - Sassuolo, 2 - 5</option>
+                                <option value="teamName1">Milan - Sassuolo, 2 - 5</option>
+                                <option value="teamName2">Milan - Sassuolo, 2 - 5</option>
+                                <option value="teamName3">Milan - Sassuolo, 2 - 5</option>
+                                <option value="teamName3">Milan - Sassuolo, 2 - 5</option>
+                                <option value="teamName3">Milan - Sassuolo, 2 - 5</option>
+                                <option value="teamName3">Milan - Sassuolo, 2 - 5</option>
+                                <option value="teamName3">Milan - Sassuolo, 2 - 5</option>
+                                <option value="teamName3">Milan - Sassuolo, 2 - 5</option>
+                            </select>
+
+                        </div>
+
+
+                    </div>
+
+
+
+                </div>
+            </div>
+
+
+
+
+            <div class="data58152 row p-2">
+
+                <div class="MemberData  col-lg-2 col-md-6 col-sm-12 pb-sm-3 ">
+
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+    <!-- add this script (loading)-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script> <!-- add this script (loading)-->
+    <!-- add this script (loading)-->
+
+    <script type="text/javascript">
+        // Function Loader
+        function hideLoader(){
+            $('.page-loader').fadeOut('slow'); // Fun Loader
+            }
+            // end function loader
+
+
+        // Function to toggle the bar
+        function geeksforgeeks() {
+            let x = document.getElementById("togglemenu");
+
+            if (x.style.display === "block") {
+                x.style.display = "none";
+            } else {
+                x.style.display = "block";
+            }
+        }
+
+        // Function to toggle the plus menu into minus
+        function myFunction(x) {
+            x.classList.toggle("fa-minus-circle");
+        }
+
+
+
+        // Add active class to the current button (highlight it)
+        var header = document.getElementById("myDIV");
+        var btns = header.getElementsByClassName("btn456");
+        for (var i = 0; i < btns.length; i++) {
+            btns[i].addEventListener("click", function () {
+                var current = document.getElementsByClassName("activo");
+                current[0].className = current[0].className.replace(" activo", "");
+                this.className += " activo";
+            });
+        }
+
+
+        // Add active class to the current button (highlight it)
+        var header = document.getElementById("myDIV1");
+        var btns = header.getElementsByClassName("btn471");
+        for (var j = 0; j < btns.length; j++) {
+            btns[j].addEventListener("click", function () {
+                var current = document.getElementsByClassName("activa");
+                current[0].className = current[0].className.replace(" activa", "");
+                this.className += " activa";
+            });
+        }
+    </script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
